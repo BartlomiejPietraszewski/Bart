@@ -1,6 +1,7 @@
 Feature: Bing Search with Filtering
 
-The basic search option in the Microsoft bing.com search engine
+The basic search option in the Microsoft bing.com search engine.
+Bing provides a variety of search services, including web, video, image and map search products.
 
   Scenario: Perform a Basic Search for "Prowly Media Monitoring"
     Given the user is on the Bing.com search page
@@ -23,3 +24,9 @@ The basic search option in the Microsoft bing.com search engine
     And each result should include messages or discussions related to the entered phrase
     And the results should be relevant to the entered phrase
 
+Scenario: List of search history and search suggestions while entering "Prowly"
+    Given the user is on the Bing.com search page
+    And the user has performed a search for "Prowly Media Monitoring" before
+    When the user enters "Prowly" in the search bar
+    Then the user should see suggested phrase "Prowly Media Monitoring" on first place on expanded search bar
+    And the user should see list of suggested querries related to Prowly
