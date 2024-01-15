@@ -16,5 +16,10 @@ The basic search option in the Microsoft bing.com search engine
     And each result should include video content
     And the results should be relevant to the entered phrase
 
+  Scenario: Filter Search Results by Messages for "Prowly Media Monitoring"
+    Given the user has performed a search for "Prowly Media Monitoring"
+    When the user selects the "Messages" category from the search filters
+    Then the user should see message search results related to Prowly
+    And each result should include messages or discussions related to the entered phrase
+    And the results should be relevant to the entered phrase
 
-Scenario:
