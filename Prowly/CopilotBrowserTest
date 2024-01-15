@@ -1,0 +1,26 @@
+Feature: Microsoft Copilot Browser Test
+  Microsoft Copilot is a AI supported tool which use AI techniques to improve search relevanc and provide more personalized results.
+  It has a possibility of generating emails, blog posts, and more, as well as provide context for whatever web page the user is on.
+
+  Background:
+    Given the user is using web browser
+    And the user is on Bing.com web page
+    And the user opened a Copilot chat
+ 
+  Scenario: Logged user asks for information about "Prowly Media Monitoring" in a Edge browser
+    Given the user is using Microsoft Edge browser
+    And the user is logged on Microsoft account
+    And the user chose Balanced Conversation Style in Copilot chat
+    When the user types "Can you give me a basic information about Media monitoring module in Prowly?" in chat box
+    Then the user should see summarized information about "Prowly Media Monitoring"
+    And the results should be relevant to the entered phrase
+    And chat assitant should propose another question about cost of using Prowly Media Monitoring
+
+  Scenario: Logged out user asks for information about "Prowly Media Monitoring" in a Chrome browser
+    Given the user is using Google Chrome browser
+    And the user is logged out of Microsoft account
+    And the user chose Creative Conversation Style in Copilot chat
+    When the user types "Can you give me a basic information about Media monitoring module in Prowly?" in chat box
+    Then the user should see summarized information about "Prowly Media Monitoring"
+    And the results should be relevant to the entered phrase
+    And user receives information about terms of use and privacy statement while using Bing
